@@ -4,19 +4,19 @@ This repository contains the implementation and validation of **Maryam's Theorem
 
 ## Theorem
 
-For any closed surface \(K \subset \mathbb{R}^3\) with total surface area \(S := \int_{\partial K} \mathrm{d}A\), the average orthographic shadow area over all viewing directions is
+For any closed surface $K \subset \mathbb{R}^3$ with total surface area $S := \int_{\partial K} \mathrm{d}A$, the average orthographic shadow area over all viewing directions is
 
-```
-Ā = (S/4) × (1 - ⟨AO⟩) = (S × C_M)/4
-```
+$$
+\bar{A} = \frac{S}{4}\left(1 - \langle AO \rangle\right) = \frac{S \cdot C_M}{4}.
+$$
 
-where
+Here
 
-\[
-\langle AO \rangle = \frac{1}{S} \int_{\partial K} AO(\mathbf{x}) \,\mathrm{d}A(\mathbf{x})
-\]
+$$
+\langle AO \rangle = \frac{1}{S} \int_{\partial K} AO(\mathbf{x}) \, \mathrm{d}A(\mathbf{x})
+$$
 
-denotes the surface-area-weighted mean cosine-weighted ambient occlusion, and \(\displaystyle C_M = 1 - \langle AO \rangle\) is the Moeini Convexity Measure. For convex shapes, \(\langle AO \rangle = 0\), so the expression collapses to Cauchy’s classical result \(\bar{A} = S/4\).
+is the surface-area-weighted mean cosine-weighted ambient occlusion, and $C_M = 1 - \langle AO \rangle$ is the Moeini Convexity Measure. For convex shapes, $\langle AO \rangle = 0$, so the expression collapses to Cauchy’s classical result $\bar{A} = S/4$.
 
 ## Files
 
