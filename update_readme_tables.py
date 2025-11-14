@@ -41,8 +41,8 @@ COLUMN_HEADERS = [
     "C_M",
     "S·C_M/4",
     "MC Shadow",
-    "MC/(S·C_M/4)",
-    "MC/(S/4)",
+    "Maryam's Theorem Error",
+    "Cauchy Error",
 ]
 
 
@@ -76,8 +76,8 @@ def build_table(title: str, rows: Iterable[dict[str, str]]) -> str:
             fmt(row["moeini_convexity"]),
             fmt(row["expected_shadow"]),
             fmt(row["monte_carlo_shadow"]),
-            fmt(row["ratio_vs_expected"]),
-            fmt(row["ratio_vs_cauchy"]),
+            fmt(row.get("error_vs_expected", row.get("ratio_vs_expected"))),
+            fmt(row.get("error_vs_cauchy", row.get("ratio_vs_cauchy"))),
         ]
         lines.append("| " + " | ".join(cells) + " |")
     lines.append("")
