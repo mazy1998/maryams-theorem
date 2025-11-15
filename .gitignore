@@ -51,11 +51,21 @@ Thumbs.db
 *.log
 *.tmp
 
-# Large mesh files (keep only essential ones)
+# Large mesh files
 *.obj
 !toruses/**/*.obj
-!Stanford_Bunny.obj
-!bunny.obj
-!teapot.obj
-!sphere.obj
-!Torus.obj
+
+# Optional assets to exclude from version control
+Stanford_Bunny.obj
+Torus.obj
+bunny.obj
+teapot.obj
+sphere.obj
+
+# Experimental scripts (kept locally)
+average_shadow_bunny.py
+monte_carlo.py
+monte_carlo_bunny.py
+monte_carlo_bunny_gpu.py
+monte_carlo_mlx.py
+plot_bunny_face_areas.py

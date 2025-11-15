@@ -1,6 +1,6 @@
 # Maryam's Theorem: Generalized Cauchy's Surface Area Formula
 
-This repository contains the implementation and validation of **Maryam's Theorem**, which generalizes Cauchy's projection formula to non-convex surfaces by introducing the **Moeini Convexity Measure**.
+This repository provides the PDF, code, and experimental validation for **Maryam’s Theorem**, a generalization of Cauchy’s projection formula to non-convex surfaces via the **Moeini Convexity Measure**. he proof sits on a differential-geometry foundation but leverages concepts from computer graphics and radiance fields to achieve the end result. 
 
 ## Theorem
 
@@ -10,10 +10,10 @@ $$
 \bar{A} = \frac{S}{4}\left(1 - \langle AO \rangle\right) = \frac{S \cdot C_M}{4}.
 $$
 
-Here
+Where
 
 $$
-\langle AO \rangle = \frac{1}{S} \int_{\partial K} AO(\mathbf{x}) \, \mathrm{d}A(\mathbf{x})
+\langle AO \rangle = \frac{1}{S} \int_{\partial K} AO(\mathbf{x}) \ \mathrm{d}A(\mathbf{x})
 $$
 
 is the surface-area-weighted mean cosine-weighted ambient occlusion, and $C_M = 1 - \langle AO \rangle$ is the Moeini Convexity Measure. For convex shapes, $\langle AO \rangle = 0$, so the expression collapses to Cauchy’s classical result $\bar{A} = S/4$.
@@ -54,6 +54,12 @@ python generate_toruses.py --elongations 1.0 2.0 3.0 4.0
 The following tables summarize the measured metrics for each generated torus at
 different elongation factors. Values are regenerated automatically via
 `update_readme_tables.py`.
+
+With the recommended parameters, the Monte Carlo benchmark proceeds as follows. First, 1,000 surface points are sampled, and for each point 1,024 hemispherical rays are traced to estimate the cosine-weighted ambient occlusion, yielding the data needed for $\bar{A} = \frac{S \cdot C_M}{4}$. Next, the mesh undergoes 400 random rotations; for each orientation we compute the orthographic shadow area. The resulting empirical mean shadow is then compared against Maryam’s theorem prediction, providing a direct validation of $\frac{S \cdot C_M}{4}$. 
+
+Procedural torus meshes were used for numerical validation because raw scans often contained holes and other artifacts. To stress-test the theorem, we generated 27 toruses spanning multiple aspect ratios and elongation factors. Maryam’s theorem matched the Monte Carlo measurements almost perfectly across all cases; the small deviations are attributable to Monte Carlo variance rather than any systematic bias.
+
+
 
 <!-- BEGIN TORUS RESULTS -->
 ### Elongation 1×
@@ -109,9 +115,8 @@ different elongation factors. Values are regenerated automatically via
 
 - **Thermal radiation modeling** - Effective radiative area for heat transfer
 - **Computer graphics** - Ambient occlusion validation and LOD optimization  
-- **Manufacturing** - Coverage prediction for coating/deposition processes
-- **Robotics** - Viewpoint planning and 3D reconstruction
-- **Aerospace** - Cross-sectional area for drag/ablation in tumbling objects
+- **Manufacturing** - Estimating the manufacturing complexity of shapes
+
 
 ## Theory
 
@@ -123,4 +128,4 @@ The theorem provides a rigorous connection between:
 This enables quantitative analysis of how surface concavity affects line-of-sight processes across multiple domains.
 
 
-This work is dedicated to mother Maryam and to the late Maryam Mirzakhani.
+This work is dedicated to my mother, Maryam, and to the late Maryam Mirzakhani.
