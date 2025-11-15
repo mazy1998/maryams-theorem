@@ -1,6 +1,8 @@
 # Maryam's Theorem: Generalized Cauchy's Surface Area Formula
 
-This repository provides the PDF, code, and experimental validation for **Maryam’s Theorem**, a generalization of Cauchy’s projection formula to non-convex surfaces via the **Moeini Convexity Measure**. he proof sits on a differential-geometry foundation but leverages concepts from computer graphics and radiance fields to achieve the end result. 
+This repository provides the PDF, code, and experimental validation for **Maryam’s Theorem**, a generalization of Cauchy’s projection formula to non-convex surfaces via the **Moeini Convexity Measure**. The proof sits on a differential-geometry foundation but leverages concepts from computer graphics and radiance fields to achieve the end result. 
+
+[AO Shaded Bunny Rotation](visualizations/bunny/mesh_rotation.mp4)
 
 ## Theorem
 
@@ -57,7 +59,7 @@ different elongation factors. Values are regenerated automatically via
 
 With the recommended parameters, the Monte Carlo benchmark proceeds as follows. First, 1,000 surface points are sampled, and for each point 1,024 hemispherical rays are traced to estimate the cosine-weighted ambient occlusion, yielding the data needed for $\bar{A} = \frac{S \cdot C_M}{4}$. Next, the mesh undergoes 400 random rotations; for each orientation we compute the orthographic shadow area. The resulting empirical mean shadow is then compared against Maryam’s theorem prediction, providing a direct validation of $\frac{S \cdot C_M}{4}$. 
 
-Procedural torus meshes were used for numerical validation because raw scans often contained holes and other artifacts. To stress-test the theorem, we generated 27 toruses spanning multiple aspect ratios and elongation factors. Maryam’s theorem matched the Monte Carlo measurements almost perfectly across all cases; the small deviations are attributable to Monte Carlo variance rather than any systematic bias.
+Procedural torus meshes were used for numerical validation because raw scans often contained holes and other artifacts. To stress-test the theorem, we generated 28 toruses spanning multiple aspect ratios and elongation factors. Maryam’s theorem matched the Monte Carlo measurements almost perfectly across all cases; the small deviations are attributable to Monte Carlo variance rather than any systematic bias.
 
 
 
@@ -128,4 +130,6 @@ The theorem provides a rigorous connection between:
 This enables quantitative analysis of how surface concavity affects line-of-sight processes across multiple domains.
 
 
-This work is dedicated to my mother, Maryam, and to the late Maryam Mirzakhani.
+This work is dedicated to my mother, Maryam, and to the late Maryam Mirzakhani. 
+
+Special thanks to OpenAI's Codex and GPT for their awesome coding models.
