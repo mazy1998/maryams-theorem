@@ -4,6 +4,10 @@ This repository provides the PDF, code, and experimental validation for **Maryam
 
 [AO Shaded Bunny Rotation](visualizations/bunny/mesh_rotation.mp4)
 
+
+https://github.com/user-attachments/assets/99bb5b2d-b308-430d-8152-aaa73a7b9a27
+
+
 ## Theorem
 
 For any closed surface $K \subset \mathbb{R}^3$ with total surface area $S := \int_{\partial K} \mathrm{d}A$, the average orthographic shadow area over all viewing directions is
